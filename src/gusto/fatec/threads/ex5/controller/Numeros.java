@@ -6,10 +6,10 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 public class Numeros extends Thread {
-	private JTextField num;
-	private JButton start;
-	private Random giros = new Random();
-	private final int[] numeros = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+	private final JTextField num;
+	private final JButton start;
+	private final Random giros = new Random();
+	private final int[] numeros = { 1, 2, 3, 4, 5, 6, 7 };
 	private static int aux;
 
 	public Numeros(JTextField num, JButton start) {
@@ -26,16 +26,25 @@ public class Numeros extends Thread {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
+				Thread.currentThread().interrupt();
 			}
 		}
 		
-		aux++;
+		setAux();
 		
 		if (aux == 3) {
 			start.setVisible(true);
-			aux = 0;
+			setAux(0);
 		}
 
+	}
+
+	public static void setAux(int aux) {
+		Numeros.aux = aux;
+	}
+
+	public static void setAux() {
+		Numeros.aux = aux + 1;
 	}
 
 	@Override

@@ -7,8 +7,12 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 public class SapoController implements ActionListener {
-	private JLabel sapo1, sapo2, sapo3, sapo4, sapo5;
-	private JButton btnIniciar;
+	private final JLabel sapo1;
+	private final JLabel sapo2;
+	private final JLabel sapo3;
+	private final JLabel sapo4;
+	private final JLabel sapo5;
+	private final JButton btnIniciar;
 
 
 	public SapoController(JLabel sapo1, JLabel sapo2, JLabel sapo3, JLabel sapo4, JLabel sapo5, JButton btnIniciar) {

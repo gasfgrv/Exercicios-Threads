@@ -7,9 +7,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 public class CarroController implements ActionListener {
-	private JLabel carro1, carro2;
-	private JLabel result;
-	private JButton btnIniciar;
+	private final JLabel carro1;
+	private final JLabel carro2;
+	private final JLabel result;
+	private final JButton btnIniciar;
 
 	public CarroController(JLabel carro1, JLabel carro2, JButton btnIniciar, JLabel result) {
 		this.carro1 = carro1;
